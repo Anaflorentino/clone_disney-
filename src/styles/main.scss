@@ -1,8 +1,75 @@
-// teste Sass
+@use 'variables';
+@use 'hero';
 
-$bgColor: rgb(16, 0, 52);
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Regular.woff2);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: Avenir;
+    src: url(../../assets/fonts/Avenir-Bold.woff2);
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Avenir, sans-serif;
+}
+
 
 body {
-    background-color: $bgColor;
-    color: #fff;
+    background-color: variables.$backgroundColor;
+    
+}
+
+
+// @mixins
+@mixin title($fontSize: 40px) {
+    @include text($fontSize);
+    color: variables.$lightText;
+}
+
+@mixin text($fontSize: 14px) {
+    font-size: $fontSize;
+    line-height: $fontSize + 10px;
+    color: variables.$grayText;
+}
+
+// texts
+.text--big {
+    @include text(14px);
+
+}
+
+.text {
+    @include text;
+}
+
+.text--small {
+    @include text(12px);
+}
+
+
+// titles
+.title--big {
+    @include title(44px);
+}
+
+.title {
+    @include title;
+}
+
+.title--small {
+    @include title(24px)
+}
+
+// links
+.link-text {
+    @include text(18px);
+    color: variables.$lightText;
+    text-decoration: underline;
 }

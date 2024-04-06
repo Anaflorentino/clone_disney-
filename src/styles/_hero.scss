@@ -1,0 +1,64 @@
+@use 'variables';
+
+.hero {
+    padding: 5.4vh;
+    min-height: 80vh; 
+    background-image: url(../images/hero_desktop.jpeg);
+    text-align: center;
+    background-size: cover;
+
+
+    &__content {
+        max-width: 500px;
+        height: auto;
+        padding-top: 32px;
+        padding-left: 48px;
+
+        &__branding {
+            max-width: calc(320px - 20%);
+            margin: 0 auto 38px;
+        }
+
+        .title--small {
+            margin-bottom: 42px;
+        }
+
+        p {
+            margin-bottom: 42px;
+            
+            // pseudo-seletor para selecionar o último parágrafo
+            &:last-child {
+                padding-top: 24px;  
+            }
+        }
+
+         
+        &__combos {
+            display: flex;
+            justify-content: space-between;
+            
+
+            &__combo {
+                width: calc(50% - 10px);
+
+                img {
+                    max-height: 40px;
+                }
+
+                button {
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    font-size: 14px;
+                    color: variables.$lightText;
+                    background-color: #6421ff;
+                    text-transform: uppercase;
+                    border-radius: 4px;
+                    margin-top: 4vh;
+                    margin-bottom: 4px;
+                }
+            }
+        }
+     }
+}
+
