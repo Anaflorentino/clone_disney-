@@ -2,13 +2,18 @@
 
 .shows {
     padding: 2vw 5.6vw;
-    min-height: 64vw;
+    min-height: 54vw;
 
     &__list {
         display: none;
         grid-template-columns: 1fr 1fr 1fr;
-        margin-top: 44px;
+        margin-top: 24px;
         gap: 16px;
+
+        // sm
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr 1fr;
+        }
 
         &--is-active {
             display: grid;
@@ -25,7 +30,15 @@
 
     &__tabs {
         display: flex;
-            justify-content: center;
+        justify-content: center;
+        
+        // sm* rolagem lateral da tab
+        @media (max-width: 768px) {
+           white-space: nowrap;
+           overflow-x: scroll;
+           padding-left: 20px;
+        }
+
         &__button {
             color: variables.$grayText;
             font-size: 18px;
@@ -37,6 +50,11 @@
             cursor: pointer;
             // para suavisar a transição quando estiver ativo:
             border-bottom: 5px solid transparent;
+
+            // sm*
+        @media (max-width: 768px) {
+           font-size: 16px;
+        }
 
             &--is-active {
                 border-color: variables.$grayText;

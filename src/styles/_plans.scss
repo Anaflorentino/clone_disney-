@@ -1,6 +1,5 @@
 .plans {
     padding: 5.6vh;
-    
 
     h2 {
         text-align: center;
@@ -11,11 +10,26 @@
         justify-content: space-around; // Alterado para space-between para um espaçamento mais uniforme
         margin-top: 36px;
 
+        // sm
+        @media (max-width: 768px) {
+            display: block;
+        }
+
+        .ctaButton {
+            margin-top: 24px;
+        }
+
         &__item {
             text-align: center;
             padding: 46px 4%; // Ajustado o padding para um espaçamento mais coerente
             max-width: 324px;
             width: 100%;
+
+            
+        // sm
+        @media (max-width: 768px) {
+        margin: 0 auto;        
+        }
 
             // seleciona o segundo item da lista
             &:nth-child(2) {
